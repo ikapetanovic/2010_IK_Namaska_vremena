@@ -50,15 +50,17 @@ namespace NamaskaVremena {
 
 
 
-	private: System::Windows::Forms::ErrorProvider^  errorProvider1;
-	private: System::Windows::Forms::TextBox^  zora;
 
-	private: System::Windows::Forms::TextBox^  aksam;
+
+
+
 	private: System::Windows::Forms::Label^  rezultat;
 
 	private: System::Windows::Forms::Label^  poruka;
 
 	private: System::Windows::Forms::Button^  izracunaj;
+	private: System::Windows::Forms::MaskedTextBox^  zora;
+	private: System::Windows::Forms::MaskedTextBox^  aksam;
 
 
 
@@ -77,16 +79,13 @@ namespace NamaskaVremena {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->components = (gcnew System::ComponentModel::Container());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->errorProvider1 = (gcnew System::Windows::Forms::ErrorProvider(this->components));
-			this->aksam = (gcnew System::Windows::Forms::TextBox());
-			this->zora = (gcnew System::Windows::Forms::TextBox());
 			this->izracunaj = (gcnew System::Windows::Forms::Button());
 			this->poruka = (gcnew System::Windows::Forms::Label());
 			this->rezultat = (gcnew System::Windows::Forms::Label());
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->errorProvider1))->BeginInit();
+			this->zora = (gcnew System::Windows::Forms::MaskedTextBox());
+			this->aksam = (gcnew System::Windows::Forms::MaskedTextBox());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -115,24 +114,6 @@ namespace NamaskaVremena {
 			this->label2->TabIndex = 3;
 			this->label2->Text = L"Kraj noæi:";
 			// 
-			// errorProvider1
-			// 
-			this->errorProvider1->ContainerControl = this;
-			// 
-			// aksam
-			// 
-			this->aksam->Location = System::Drawing::Point(84, 22);
-			this->aksam->Name = L"aksam";
-			this->aksam->Size = System::Drawing::Size(75, 20);
-			this->aksam->TabIndex = 4;
-			// 
-			// zora
-			// 
-			this->zora->Location = System::Drawing::Point(84, 54);
-			this->zora->Name = L"zora";
-			this->zora->Size = System::Drawing::Size(75, 20);
-			this->zora->TabIndex = 5;
-			// 
 			// izracunaj
 			// 
 			this->izracunaj->Location = System::Drawing::Point(84, 90);
@@ -148,8 +129,9 @@ namespace NamaskaVremena {
 			this->poruka->AutoSize = true;
 			this->poruka->Location = System::Drawing::Point(12, 132);
 			this->poruka->Name = L"poruka";
-			this->poruka->Size = System::Drawing::Size(0, 13);
+			this->poruka->Size = System::Drawing::Size(63, 13);
 			this->poruka->TabIndex = 7;
+			this->poruka->Text = L"Jacija je do:";
 			// 
 			// rezultat
 			// 
@@ -159,166 +141,75 @@ namespace NamaskaVremena {
 			this->rezultat->Size = System::Drawing::Size(0, 13);
 			this->rezultat->TabIndex = 8;
 			// 
+			// zora
+			// 
+			this->zora->Location = System::Drawing::Point(84, 50);
+			this->zora->Mask = L"00:00";
+			this->zora->Name = L"zora";
+			this->zora->Size = System::Drawing::Size(33, 20);
+			this->zora->TabIndex = 10;
+			this->zora->ValidatingType = System::DateTime::typeid;
+			// 
+			// aksam
+			// 
+			this->aksam->Location = System::Drawing::Point(84, 22);
+			this->aksam->Mask = L"00:00";
+			this->aksam->Name = L"aksam";
+			this->aksam->Size = System::Drawing::Size(33, 20);
+			this->aksam->TabIndex = 9;
+			this->aksam->ValidatingType = System::DateTime::typeid;
+			// 
 			// Jacija
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(203, 159);
+			this->Controls->Add(this->zora);
+			this->Controls->Add(this->aksam);
 			this->Controls->Add(this->rezultat);
 			this->Controls->Add(this->poruka);
 			this->Controls->Add(this->izracunaj);
-			this->Controls->Add(this->zora);
-			this->Controls->Add(this->aksam);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->label2);
 			this->MaximizeBox = false;
 			this->Name = L"Jacija";
 			this->Text = L"Jacija";
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->errorProvider1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
-	public:
-			bool PostaviAksam ()
-			{
-				 if (aksam->Text == "")
-				 {
-					 errorProvider1->SetError (aksam, "Morate unijeti u koliko noæ poèinje.");
-					 aksam->Focus ();
-					 return false;
-				 }
-				 else if (aksam->Text->Length < 5)
-				 {
-					 errorProvider1->SetError (aksam, "Morate unijeti vrijeme u formatu: hh:mm");
-					 aksam->Focus ();
-					 return false;
-				 }
-				 else if (aksam->Text->Length == 5)
-				 {
-					 
-					 if (aksam->Text [0].IsDigit (aksam->Text, 0) == false || aksam->Text [1].IsDigit (aksam->Text, 0) == false || aksam->Text [3].IsDigit (aksam->Text, 0) == false || aksam->Text [4].IsDigit (aksam->Text, 0) == false)
-					 {
-						 errorProvider1->SetError (aksam, "Morate unijeti brojeve. Format unosa je: hh:mm");
-						 aksam->Focus ();
-						 return false;
-					 }
-					 if (aksam->Text [2] != ':')
-					 {
-						 errorProvider1->SetError (aksam, "U sredini mora biti dvotaèka ':'. Format unosa je: hh:mm");
-						 aksam->Focus ();
-						 return false;
-					 }
-				 	 errorProvider1->Clear ();
-					 return true;
-				 }	
-			}
-
-			bool PostaviZoru ()
-			{
-				if (zora->Text == "")
-				 {
-					 errorProvider1->SetError (zora, "Morate unijeti u koliko noæ završava.");
-					 aksam->Focus ();
-					 return false;
-				 }
-				 else if (zora->Text->Length < 5)
-				 {
-					 errorProvider1->SetError (zora, "Morate unijeti vrijeme u formatu: hh:mm");
-					 aksam->Focus ();
-					 return false;
-				 }
-				  else if (zora->Text->Length == 5)
-				 {
-					 
-					 if (zora->Text [0].IsDigit (zora->Text, 0) == false || zora->Text [1].IsDigit (zora->Text, 0) == false || zora->Text [3].IsDigit (zora->Text, 0) == false || zora->Text [4].IsDigit (zora->Text, 0) == false)
-					 {
-						 errorProvider1->SetError (zora, "Morate unijeti brojeve. Format unosa je: hh:mm");
-						 zora->Focus ();
-						 return false;
-					 }
-					 if (zora->Text [2] != ':')
-					 {
-						 errorProvider1->SetError (zora, "U sredini mora biti dvotaèka ':'. Format unosa je: hh:mm");
-						 zora->Focus ();
-						 return false;
-					 }
-				
-					 errorProvider1->Clear ();
-					 return true;
-				 }	
-			}
-
-	private: System::Void aksam_Validating(System::Object^  sender, System::ComponentModel::CancelEventArgs^  e) {
-				 PostaviAksam ();
-			 }
-private: System::Void zora_Validating(System::Object^  sender, System::ComponentModel::CancelEventArgs^  e) {
-			     PostaviZoru ();
-		 }
-private: System::Void izracunaj_Click(System::Object^  sender, System::EventArgs^  e) {
-				  
-		 }
+	
 private: System::Void izracunaj_Click_1(System::Object^  sender, System::EventArgs^  e) {
 					
-			      if (!PostaviAksam ()) 
-					  return;
-				  if (!PostaviZoru ())
-					  return;
-									
+		      try
+			  {									
 				  int sekundi_24 = 24 * 3600; 
                  
-                  int sati_aksam;
-                  int minuta_aksam;
-                  int sekundi_aksam;
-
-                  int sati1 = int (aksam->Text [0]) - 48;
-                  int sati2 = int (aksam->Text [1]) - 48;
-                  int minuta1 = int (aksam->Text [3]) - 48;
-                  int minuta2 = int (aksam->Text [4]) - 48;
-
-                  sati_aksam = sati1 * 10 + sati2;
-                  minuta_aksam = minuta1 * 10 + minuta2;
-            
-                  sekundi_aksam = sati_aksam * 3600 + minuta_aksam * 60;
+				  DateTime aksamTime = DateTime::Parse (aksam->Text);
+                  int sekundi_aksam = aksamTime.Hour * 3600 + aksamTime.Minute * 60;
 
                   int sekundi_do_24 = sekundi_24 - sekundi_aksam;
 
-                  int sati_zora;
-                  int minuta_zora;
-                  int sekundi_zora;
+				  DateTime zoraTime = DateTime::Parse (zora->Text);
+				  int sekundi_zora = zoraTime.Hour * 3600 + zoraTime.Minute * 60;
 
-                  int sati3 = Convert::ToInt32(zora->Text [0]) - 48;
-                  int sati4 = Convert::ToInt32(zora->Text [1]) - 48;
-                  int minuta3 = Convert::ToInt32(zora->Text [3]) - 48;
-                  int minuta4 = Convert::ToInt32(zora->Text [4]) - 48;
+                  int sekundi_izmedju = sekundi_do_24 + sekundi_zora;
 
-                  sati_zora =  sati3 * 10 + sati4;
-                  minuta_zora = minuta3 * 10 + minuta4;
+                  int sekundi_pola = sekundi_izmedju / 2;
 
-                  sekundi_zora = sati_zora * 3600 + minuta_zora * 60;
-
-                  int sekundi_izmedju;
-
-                  sekundi_izmedju = sekundi_do_24 + sekundi_zora;
-
-                  int sekundi_pola;
-
-                  sekundi_pola = sekundi_izmedju / 2;
-
-                  int sati_rezultat;
-                  int minuta_rezultat;
-                  int sekundi_rezultat;
-
-                  sekundi_rezultat = sekundi_aksam + sekundi_pola;
-
-                  sati_rezultat = (sekundi_rezultat / 3600) % 24;
-                  minuta_rezultat = (sekundi_rezultat % 3600) / 60;
+                  int sekundi_rezultat = sekundi_aksam + sekundi_pola;                  
+                  int sati_rezultat = (sekundi_rezultat / 3600) % 24;
+                  int minuta_rezultat = (sekundi_rezultat % 3600) / 60;
 
                   // Treba dodati nulu gdje je potrebno, jer je on zanemari pri ispisu
-				  poruka->Text = "Jacija je do: ";
 				  rezultat->Text = sati_rezultat + ":" + minuta_rezultat;
 				  aksam->Focus ();
+			  }
+			  catch (Exception ^)
+			  {
+				  MessageBox::Show ("Niste unijeli ispravne podatke.", "Jacija-namaz", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			  }
 
 		 }
 };

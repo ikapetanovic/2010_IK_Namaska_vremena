@@ -70,7 +70,7 @@ namespace NamaskaVremena {
 			this->richTextBox1->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->richTextBox1->Location = System::Drawing::Point(12, 12);
 			this->richTextBox1->Name = L"richTextBox1";
-			this->richTextBox1->Size = System::Drawing::Size(368, 125);
+			this->richTextBox1->Size = System::Drawing::Size(368, 110);
 			this->richTextBox1->TabIndex = 6;
 			this->richTextBox1->Text = resources->GetString(L"richTextBox1.Text");
 			// 
