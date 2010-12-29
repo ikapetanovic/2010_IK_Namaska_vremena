@@ -167,7 +167,6 @@ namespace NamaskaVremena {
 			this->groupBox1->Size = System::Drawing::Size(153, 84);
 			this->groupBox1->TabIndex = 0;
 			this->groupBox1->TabStop = false;
-			this->groupBox1->Text = L"Potrebni podaci";
 			// 
 			// ZadnjaTrecina
 			// 

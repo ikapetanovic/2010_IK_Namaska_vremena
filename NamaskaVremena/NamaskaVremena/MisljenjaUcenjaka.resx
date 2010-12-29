@@ -117,13 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="richTextBox1.Text" xml:space="preserve">
+  <data name="textBox1.Text" xml:space="preserve">
     <value>Pitanje: Koje je zadnje vrijeme jacije i kako se može prepoznati? 
 
 Odgovor: Zadnje vrijeme jacije je do ponoći, a zna se tako što se podijeli napola između zalaska sunca i izlaska zore. Završetkom prve polovine završava se vrijeme jacije, a druga polovina nije namasko vrijeme nego međuvrijeme između jacije i sabaha.
 
 Šejh Muhammed ibn Salih el-Usejmin
 
-http://www.minber.ba/brosure/60.%20PITANJA%20O%20PROPISIMA%20HAJZA%20I%20ODGOVORI%20NA%20NJIH.pdf</value>
+Izvor: http://www.minber.ba/brosure/60.%20PITANJA%20O%20PROPISIMA%20HAJZA%20I%20ODGOVORI%20NA%20NJIH.pdf
+</value>
   </data>
 </root>

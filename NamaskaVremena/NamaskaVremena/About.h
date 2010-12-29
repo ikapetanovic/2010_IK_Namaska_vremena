@@ -41,7 +41,9 @@ namespace NamaskaVremena {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::RichTextBox^  richTextBox1;
+	private: System::Windows::Forms::TextBox^  textBox1;
+	protected: 
+
 	protected: 
 
 	protected: 
@@ -62,17 +64,20 @@ namespace NamaskaVremena {
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(About::typeid));
-			this->richTextBox1 = (gcnew System::Windows::Forms::RichTextBox());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->SuspendLayout();
 			// 
-			// richTextBox1
+			// textBox1
 			// 
-			this->richTextBox1->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->richTextBox1->Location = System::Drawing::Point(12, 12);
-			this->richTextBox1->Name = L"richTextBox1";
-			this->richTextBox1->Size = System::Drawing::Size(368, 110);
-			this->richTextBox1->TabIndex = 6;
-			this->richTextBox1->Text = resources->GetString(L"richTextBox1.Text");
+			this->textBox1->BackColor = System::Drawing::SystemColors::Window;
+			this->textBox1->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->textBox1->Enabled = false;
+			this->textBox1->Location = System::Drawing::Point(12, 12);
+			this->textBox1->Multiline = true;
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(305, 114);
+			this->textBox1->TabIndex = 0;
+			this->textBox1->Text = resources->GetString(L"textBox1.Text");
 			// 
 			// About
 			// 
@@ -80,12 +85,13 @@ namespace NamaskaVremena {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::Window;
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(391, 134);
-			this->Controls->Add(this->richTextBox1);
+			this->ClientSize = System::Drawing::Size(326, 137);
+			this->Controls->Add(this->textBox1);
 			this->MaximizeBox = false;
 			this->Name = L"About";
 			this->Text = L"O aplikaciji";
 			this->ResumeLayout(false);
+			this->PerformLayout();
 
 		}
 #pragma endregion
