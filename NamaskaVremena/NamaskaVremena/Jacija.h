@@ -188,7 +188,7 @@ namespace NamaskaVremena {
 			this->BackColor = System::Drawing::SystemColors::Window;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(231, 189);
+			this->ClientSize = System::Drawing::Size(231, 198);
 			this->Controls->Add(this->groupBox1);
 			this->Controls->Add(this->rezultat);
 			this->Controls->Add(this->poruka);
