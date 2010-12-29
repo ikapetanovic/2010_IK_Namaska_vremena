@@ -95,7 +95,7 @@ namespace NamaskaVremena {
 			this->rezultat1->BackColor = System::Drawing::Color::Transparent;
 			this->rezultat1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(238)));
-			this->rezultat1->Location = System::Drawing::Point(149, 140);
+			this->rezultat1->Location = System::Drawing::Point(153, 145);
 			this->rezultat1->Name = L"rezultat1";
 			this->rezultat1->Size = System::Drawing::Size(0, 13);
 			this->rezultat1->TabIndex = 4;
@@ -104,7 +104,7 @@ namespace NamaskaVremena {
 			// 
 			this->poruka1->AutoSize = true;
 			this->poruka1->BackColor = System::Drawing::Color::Transparent;
-			this->poruka1->Location = System::Drawing::Point(44, 140);
+			this->poruka1->Location = System::Drawing::Point(36, 145);
 			this->poruka1->Name = L"poruka1";
 			this->poruka1->Size = System::Drawing::Size(96, 13);
 			this->poruka1->TabIndex = 3;
@@ -112,7 +112,7 @@ namespace NamaskaVremena {
 			// 
 			// izracunaj
 			// 
-			this->izracunaj->Location = System::Drawing::Point(116, 106);
+			this->izracunaj->Location = System::Drawing::Point(117, 109);
 			this->izracunaj->Name = L"izracunaj";
 			this->izracunaj->Size = System::Drawing::Size(75, 23);
 			this->izracunaj->TabIndex = 1;
@@ -127,7 +127,7 @@ namespace NamaskaVremena {
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(238)));
 			this->label1->ForeColor = System::Drawing::SystemColors::WindowText;
-			this->label1->Location = System::Drawing::Point(6, 29);
+			this->label1->Location = System::Drawing::Point(16, 33);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(77, 13);
 			this->label1->TabIndex = 16;
@@ -140,7 +140,7 @@ namespace NamaskaVremena {
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(238)));
 			this->label2->ForeColor = System::Drawing::SystemColors::WindowText;
-			this->label2->Location = System::Drawing::Point(9, 57);
+			this->label2->Location = System::Drawing::Point(16, 61);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(41, 13);
 			this->label2->TabIndex = 17;
@@ -150,7 +150,7 @@ namespace NamaskaVremena {
 			// 
 			this->poruka2->AutoSize = true;
 			this->poruka2->BackColor = System::Drawing::Color::Transparent;
-			this->poruka2->Location = System::Drawing::Point(44, 166);
+			this->poruka2->Location = System::Drawing::Point(36, 166);
 			this->poruka2->Name = L"poruka2";
 			this->poruka2->Size = System::Drawing::Size(49, 13);
 			this->poruka2->TabIndex = 5;
@@ -162,14 +162,14 @@ namespace NamaskaVremena {
 			this->rezultat2->BackColor = System::Drawing::Color::Transparent;
 			this->rezultat2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(238)));
-			this->rezultat2->Location = System::Drawing::Point(149, 166);
+			this->rezultat2->Location = System::Drawing::Point(153, 166);
 			this->rezultat2->Name = L"rezultat2";
 			this->rezultat2->Size = System::Drawing::Size(0, 13);
 			this->rezultat2->TabIndex = 6;
 			// 
 			// izlazak
 			// 
-			this->izlazak->Location = System::Drawing::Point(98, 22);
+			this->izlazak->Location = System::Drawing::Point(103, 26);
 			this->izlazak->Mask = L"00:00";
 			this->izlazak->Name = L"izlazak";
 			this->izlazak->Size = System::Drawing::Size(33, 20);
@@ -178,7 +178,7 @@ namespace NamaskaVremena {
 			// 
 			// podne
 			// 
-			this->podne->Location = System::Drawing::Point(98, 50);
+			this->podne->Location = System::Drawing::Point(103, 54);
 			this->podne->Mask = L"00:00";
 			this->podne->Name = L"podne";
 			this->podne->Size = System::Drawing::Size(33, 20);
@@ -192,9 +192,9 @@ namespace NamaskaVremena {
 			this->groupBox1->Controls->Add(this->podne);
 			this->groupBox1->Controls->Add(this->label2);
 			this->groupBox1->Controls->Add(this->izlazak);
-			this->groupBox1->Location = System::Drawing::Point(47, 16);
+			this->groupBox1->Location = System::Drawing::Point(39, 12);
 			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Size = System::Drawing::Size(144, 79);
+			this->groupBox1->Size = System::Drawing::Size(153, 84);
 			this->groupBox1->TabIndex = 0;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Potrebni podaci";
