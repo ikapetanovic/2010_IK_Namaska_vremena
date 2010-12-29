@@ -50,7 +50,7 @@ namespace NamaskaVremena {
 	private: System::Windows::Forms::ToolStripMenuItem^  poèetakToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  jacijanamazToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  duhanamazToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^  zabranjenaNamaskaVremenaToolStripMenuItem;
+
 	private: System::Windows::Forms::ToolStripMenuItem^  izlazToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  detaljnijeToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  mišljenjeUèenjakaToolStripMenuItem;
@@ -70,12 +70,12 @@ namespace NamaskaVremena {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(Form1::typeid));
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->poèetakToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->jacijanamazToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->duhanamazToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->zadnjaTreæinaNoæiToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->zabranjenaNamaskaVremenaToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->izlazToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->detaljnijeToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->mišljenjeUèenjakaToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
@@ -89,15 +89,14 @@ namespace NamaskaVremena {
 				this->detaljnijeToolStripMenuItem});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(284, 24);
+			this->menuStrip1->Size = System::Drawing::Size(396, 24);
 			this->menuStrip1->TabIndex = 0;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
 			// poèetakToolStripMenuItem
 			// 
-			this->poèetakToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(5) {this->jacijanamazToolStripMenuItem, 
-				this->duhanamazToolStripMenuItem, this->zadnjaTreæinaNoæiToolStripMenuItem, this->zabranjenaNamaskaVremenaToolStripMenuItem, 
-				this->izlazToolStripMenuItem});
+			this->poèetakToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {this->jacijanamazToolStripMenuItem, 
+				this->duhanamazToolStripMenuItem, this->zadnjaTreæinaNoæiToolStripMenuItem, this->izlazToolStripMenuItem});
 			this->poèetakToolStripMenuItem->Name = L"poèetakToolStripMenuItem";
 			this->poèetakToolStripMenuItem->Size = System::Drawing::Size(61, 20);
 			this->poèetakToolStripMenuItem->Text = L"Poèetak";
@@ -105,34 +104,28 @@ namespace NamaskaVremena {
 			// jacijanamazToolStripMenuItem
 			// 
 			this->jacijanamazToolStripMenuItem->Name = L"jacijanamazToolStripMenuItem";
-			this->jacijanamazToolStripMenuItem->Size = System::Drawing::Size(232, 22);
+			this->jacijanamazToolStripMenuItem->Size = System::Drawing::Size(175, 22);
 			this->jacijanamazToolStripMenuItem->Text = L"Jacija-namaz";
 			this->jacijanamazToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::jacijanamazToolStripMenuItem_Click);
 			// 
 			// duhanamazToolStripMenuItem
 			// 
 			this->duhanamazToolStripMenuItem->Name = L"duhanamazToolStripMenuItem";
-			this->duhanamazToolStripMenuItem->Size = System::Drawing::Size(232, 22);
+			this->duhanamazToolStripMenuItem->Size = System::Drawing::Size(175, 22);
 			this->duhanamazToolStripMenuItem->Text = L"Duha-namaz";
 			this->duhanamazToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::duhanamazToolStripMenuItem_Click);
 			// 
 			// zadnjaTreæinaNoæiToolStripMenuItem
 			// 
 			this->zadnjaTreæinaNoæiToolStripMenuItem->Name = L"zadnjaTreæinaNoæiToolStripMenuItem";
-			this->zadnjaTreæinaNoæiToolStripMenuItem->Size = System::Drawing::Size(232, 22);
+			this->zadnjaTreæinaNoæiToolStripMenuItem->Size = System::Drawing::Size(175, 22);
 			this->zadnjaTreæinaNoæiToolStripMenuItem->Text = L"Zadnja treæina noæi";
 			this->zadnjaTreæinaNoæiToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::zadnjaTreæinaNoæiToolStripMenuItem_Click);
-			// 
-			// zabranjenaNamaskaVremenaToolStripMenuItem
-			// 
-			this->zabranjenaNamaskaVremenaToolStripMenuItem->Name = L"zabranjenaNamaskaVremenaToolStripMenuItem";
-			this->zabranjenaNamaskaVremenaToolStripMenuItem->Size = System::Drawing::Size(232, 22);
-			this->zabranjenaNamaskaVremenaToolStripMenuItem->Text = L"Zabranjena namaska vremena";
 			// 
 			// izlazToolStripMenuItem
 			// 
 			this->izlazToolStripMenuItem->Name = L"izlazToolStripMenuItem";
-			this->izlazToolStripMenuItem->Size = System::Drawing::Size(232, 22);
+			this->izlazToolStripMenuItem->Size = System::Drawing::Size(175, 22);
 			this->izlazToolStripMenuItem->Text = L"Izlaz";
 			this->izlazToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::izlazToolStripMenuItem_Click);
 			// 
@@ -162,7 +155,9 @@ namespace NamaskaVremena {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(284, 262);
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"$this.BackgroundImage")));
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			this->ClientSize = System::Drawing::Size(396, 250);
 			this->Controls->Add(this->menuStrip1);
 			this->MainMenuStrip = this->menuStrip1;
 			this->MaximizeBox = false;

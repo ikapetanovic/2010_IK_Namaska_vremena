@@ -79,6 +79,7 @@ namespace NamaskaVremena {
 			this->BackColor = System::Drawing::SystemColors::Window;
 			this->ClientSize = System::Drawing::Size(285, 221);
 			this->Controls->Add(this->richTextBox1);
+			this->MaximizeBox = false;
 			this->Name = L"MisljenjaUcenjaka";
 			this->Text = L"Mišljenja uèenjaka";
 			this->ResumeLayout(false);

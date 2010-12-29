@@ -52,6 +52,7 @@ namespace NamaskaVremena {
 
 	private: System::Windows::Forms::MaskedTextBox^  zora;
 	private: System::Windows::Forms::MaskedTextBox^  aksam;
+	private: System::Windows::Forms::GroupBox^  groupBox1;
 	private: System::ComponentModel::IContainer^  components;
 
 	private:
@@ -67,6 +68,7 @@ namespace NamaskaVremena {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(ZadnjaTrecina::typeid));
 			this->rezultat = (gcnew System::Windows::Forms::Label());
 			this->poruka = (gcnew System::Windows::Forms::Label());
 			this->izracunaj = (gcnew System::Windows::Forms::Button());
@@ -74,12 +76,17 @@ namespace NamaskaVremena {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->zora = (gcnew System::Windows::Forms::MaskedTextBox());
 			this->aksam = (gcnew System::Windows::Forms::MaskedTextBox());
+			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
+			this->groupBox1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// rezultat
 			// 
 			this->rezultat->AutoSize = true;
-			this->rezultat->Location = System::Drawing::Point(171, 129);
+			this->rezultat->BackColor = System::Drawing::Color::Transparent;
+			this->rezultat->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(238)));
+			this->rezultat->Location = System::Drawing::Point(157, 142);
 			this->rezultat->Name = L"rezultat";
 			this->rezultat->Size = System::Drawing::Size(0, 13);
 			this->rezultat->TabIndex = 15;
@@ -87,18 +94,19 @@ namespace NamaskaVremena {
 			// poruka
 			// 
 			this->poruka->AutoSize = true;
-			this->poruka->Location = System::Drawing::Point(12, 129);
+			this->poruka->BackColor = System::Drawing::Color::Transparent;
+			this->poruka->Location = System::Drawing::Point(40, 142);
 			this->poruka->Name = L"poruka";
-			this->poruka->Size = System::Drawing::Size(153, 13);
+			this->poruka->Size = System::Drawing::Size(104, 13);
 			this->poruka->TabIndex = 14;
-			this->poruka->Text = L"Zadnja trecina noæi poèinje od:";
+			this->poruka->Text = L"Zadnja treæina je od:";
 			// 
 			// izracunaj
 			// 
-			this->izracunaj->Location = System::Drawing::Point(84, 77);
+			this->izracunaj->Location = System::Drawing::Point(121, 108);
 			this->izracunaj->Name = L"izracunaj";
 			this->izracunaj->Size = System::Drawing::Size(75, 23);
-			this->izracunaj->TabIndex = 13;
+			this->izracunaj->TabIndex = 1;
 			this->izracunaj->Text = L"Izraèunaj";
 			this->izracunaj->UseVisualStyleBackColor = true;
 			this->izracunaj->Click += gcnew System::EventHandler(this, &ZadnjaTrecina::izracunaj_Click);
@@ -110,7 +118,7 @@ namespace NamaskaVremena {
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(238)));
 			this->label1->ForeColor = System::Drawing::SystemColors::WindowText;
-			this->label1->Location = System::Drawing::Point(12, 9);
+			this->label1->Location = System::Drawing::Point(15, 26);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(42, 13);
 			this->label1->TabIndex = 9;
@@ -123,7 +131,7 @@ namespace NamaskaVremena {
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(238)));
 			this->label2->ForeColor = System::Drawing::SystemColors::WindowText;
-			this->label2->Location = System::Drawing::Point(12, 44);
+			this->label2->Location = System::Drawing::Point(15, 61);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(51, 13);
 			this->label2->TabIndex = 10;
@@ -131,37 +139,54 @@ namespace NamaskaVremena {
 			// 
 			// zora
 			// 
-			this->zora->Location = System::Drawing::Point(84, 37);
+			this->zora->Location = System::Drawing::Point(103, 54);
 			this->zora->Mask = L"00:00";
 			this->zora->Name = L"zora";
 			this->zora->Size = System::Drawing::Size(33, 20);
-			this->zora->TabIndex = 17;
+			this->zora->TabIndex = 1;
 			this->zora->ValidatingType = System::DateTime::typeid;
 			// 
 			// aksam
 			// 
-			this->aksam->Location = System::Drawing::Point(84, 9);
+			this->aksam->Location = System::Drawing::Point(103, 26);
 			this->aksam->Mask = L"00:00";
 			this->aksam->Name = L"aksam";
 			this->aksam->Size = System::Drawing::Size(33, 20);
-			this->aksam->TabIndex = 16;
+			this->aksam->TabIndex = 0;
 			this->aksam->ValidatingType = System::DateTime::typeid;
+			// 
+			// groupBox1
+			// 
+			this->groupBox1->BackColor = System::Drawing::Color::Transparent;
+			this->groupBox1->Controls->Add(this->label1);
+			this->groupBox1->Controls->Add(this->zora);
+			this->groupBox1->Controls->Add(this->label2);
+			this->groupBox1->Controls->Add(this->aksam);
+			this->groupBox1->Location = System::Drawing::Point(43, 12);
+			this->groupBox1->Name = L"groupBox1";
+			this->groupBox1->Size = System::Drawing::Size(153, 84);
+			this->groupBox1->TabIndex = 0;
+			this->groupBox1->TabStop = false;
+			this->groupBox1->Text = L"Potrebni podaci";
 			// 
 			// ZadnjaTrecina
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(243, 174);
-			this->Controls->Add(this->zora);
-			this->Controls->Add(this->aksam);
+			this->BackColor = System::Drawing::SystemColors::Window;
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"$this.BackgroundImage")));
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->ClientSize = System::Drawing::Size(231, 189);
+			this->Controls->Add(this->groupBox1);
 			this->Controls->Add(this->rezultat);
 			this->Controls->Add(this->poruka);
 			this->Controls->Add(this->izracunaj);
-			this->Controls->Add(this->label1);
-			this->Controls->Add(this->label2);
 			this->MaximizeBox = false;
 			this->Name = L"ZadnjaTrecina";
 			this->Text = L"Zadnja treæina noæi";
+			this->Load += gcnew System::EventHandler(this, &ZadnjaTrecina::ZadnjaTrecina_Load);
+			this->groupBox1->ResumeLayout(false);
+			this->groupBox1->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -198,6 +223,8 @@ private: System::Void izracunaj_Click(System::Object^  sender, System::EventArgs
 			  {
 				  MessageBox::Show ("Niste unijeli ispravne podatke.", "Zadnja trecina noci", MessageBoxButtons::OK, MessageBoxIcon::Error);
 			  }
+		 }
+private: System::Void ZadnjaTrecina_Load(System::Object^  sender, System::EventArgs^  e) {
 		 }
 };
 }

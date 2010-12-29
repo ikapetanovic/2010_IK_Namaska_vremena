@@ -79,6 +79,7 @@ namespace NamaskaVremena {
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::Window;
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(391, 134);
 			this->Controls->Add(this->richTextBox1);
 			this->MaximizeBox = false;

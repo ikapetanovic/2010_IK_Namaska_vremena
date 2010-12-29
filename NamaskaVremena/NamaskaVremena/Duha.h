@@ -59,6 +59,7 @@ namespace NamaskaVremena {
 	private: System::Windows::Forms::Label^  poruka2;
 	private: System::Windows::Forms::MaskedTextBox^  podne;
 	private: System::Windows::Forms::MaskedTextBox^  izlazak;
+	private: System::Windows::Forms::GroupBox^  groupBox1;
 	private: System::ComponentModel::IContainer^  components;
 
 	private:
@@ -74,6 +75,7 @@ namespace NamaskaVremena {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(Duha::typeid));
 			this->rezultat1 = (gcnew System::Windows::Forms::Label());
 			this->poruka1 = (gcnew System::Windows::Forms::Label());
 			this->izracunaj = (gcnew System::Windows::Forms::Button());
@@ -83,12 +85,17 @@ namespace NamaskaVremena {
 			this->rezultat2 = (gcnew System::Windows::Forms::Label());
 			this->izlazak = (gcnew System::Windows::Forms::MaskedTextBox());
 			this->podne = (gcnew System::Windows::Forms::MaskedTextBox());
+			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
+			this->groupBox1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// rezultat1
 			// 
 			this->rezultat1->AutoSize = true;
-			this->rezultat1->Location = System::Drawing::Point(140, 129);
+			this->rezultat1->BackColor = System::Drawing::Color::Transparent;
+			this->rezultat1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(238)));
+			this->rezultat1->Location = System::Drawing::Point(149, 140);
 			this->rezultat1->Name = L"rezultat1";
 			this->rezultat1->Size = System::Drawing::Size(0, 13);
 			this->rezultat1->TabIndex = 4;
@@ -96,18 +103,19 @@ namespace NamaskaVremena {
 			// poruka1
 			// 
 			this->poruka1->AutoSize = true;
-			this->poruka1->Location = System::Drawing::Point(12, 129);
+			this->poruka1->BackColor = System::Drawing::Color::Transparent;
+			this->poruka1->Location = System::Drawing::Point(44, 140);
 			this->poruka1->Name = L"poruka1";
-			this->poruka1->Size = System::Drawing::Size(122, 13);
+			this->poruka1->Size = System::Drawing::Size(96, 13);
 			this->poruka1->TabIndex = 3;
-			this->poruka1->Text = L"Duha-namaz poèinje od:";
+			this->poruka1->Text = L"Duha-namaz je od:";
 			// 
 			// izracunaj
 			// 
-			this->izracunaj->Location = System::Drawing::Point(126, 77);
+			this->izracunaj->Location = System::Drawing::Point(116, 106);
 			this->izracunaj->Name = L"izracunaj";
 			this->izracunaj->Size = System::Drawing::Size(75, 23);
-			this->izracunaj->TabIndex = 2;
+			this->izracunaj->TabIndex = 1;
 			this->izracunaj->Text = L"Izraèunaj";
 			this->izracunaj->UseVisualStyleBackColor = true;
 			this->izracunaj->Click += gcnew System::EventHandler(this, &Duha::izracunaj_Click);
@@ -119,7 +127,7 @@ namespace NamaskaVremena {
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(238)));
 			this->label1->ForeColor = System::Drawing::SystemColors::WindowText;
-			this->label1->Location = System::Drawing::Point(12, 9);
+			this->label1->Location = System::Drawing::Point(6, 29);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(77, 13);
 			this->label1->TabIndex = 16;
@@ -132,7 +140,7 @@ namespace NamaskaVremena {
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(238)));
 			this->label2->ForeColor = System::Drawing::SystemColors::WindowText;
-			this->label2->Location = System::Drawing::Point(12, 44);
+			this->label2->Location = System::Drawing::Point(9, 57);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(41, 13);
 			this->label2->TabIndex = 17;
@@ -141,23 +149,27 @@ namespace NamaskaVremena {
 			// poruka2
 			// 
 			this->poruka2->AutoSize = true;
-			this->poruka2->Location = System::Drawing::Point(12, 161);
+			this->poruka2->BackColor = System::Drawing::Color::Transparent;
+			this->poruka2->Location = System::Drawing::Point(44, 166);
 			this->poruka2->Name = L"poruka2";
-			this->poruka2->Size = System::Drawing::Size(50, 13);
+			this->poruka2->Size = System::Drawing::Size(49, 13);
 			this->poruka2->TabIndex = 5;
-			this->poruka2->Text = L"i traje do:";
+			this->poruka2->Text = L"Traje do:";
 			// 
 			// rezultat2
 			// 
 			this->rezultat2->AutoSize = true;
-			this->rezultat2->Location = System::Drawing::Point(140, 161);
+			this->rezultat2->BackColor = System::Drawing::Color::Transparent;
+			this->rezultat2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(238)));
+			this->rezultat2->Location = System::Drawing::Point(149, 166);
 			this->rezultat2->Name = L"rezultat2";
 			this->rezultat2->Size = System::Drawing::Size(0, 13);
 			this->rezultat2->TabIndex = 6;
 			// 
 			// izlazak
 			// 
-			this->izlazak->Location = System::Drawing::Point(126, 9);
+			this->izlazak->Location = System::Drawing::Point(98, 22);
 			this->izlazak->Mask = L"00:00";
 			this->izlazak->Name = L"izlazak";
 			this->izlazak->Size = System::Drawing::Size(33, 20);
@@ -166,30 +178,46 @@ namespace NamaskaVremena {
 			// 
 			// podne
 			// 
-			this->podne->Location = System::Drawing::Point(126, 37);
+			this->podne->Location = System::Drawing::Point(98, 50);
 			this->podne->Mask = L"00:00";
 			this->podne->Name = L"podne";
 			this->podne->Size = System::Drawing::Size(33, 20);
 			this->podne->TabIndex = 1;
 			this->podne->ValidatingType = System::DateTime::typeid;
 			// 
+			// groupBox1
+			// 
+			this->groupBox1->BackColor = System::Drawing::Color::Transparent;
+			this->groupBox1->Controls->Add(this->label1);
+			this->groupBox1->Controls->Add(this->podne);
+			this->groupBox1->Controls->Add(this->label2);
+			this->groupBox1->Controls->Add(this->izlazak);
+			this->groupBox1->Location = System::Drawing::Point(47, 16);
+			this->groupBox1->Name = L"groupBox1";
+			this->groupBox1->Size = System::Drawing::Size(144, 79);
+			this->groupBox1->TabIndex = 0;
+			this->groupBox1->TabStop = false;
+			this->groupBox1->Text = L"Potrebni podaci";
+			// 
 			// Duha
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(254, 199);
-			this->Controls->Add(this->podne);
-			this->Controls->Add(this->izlazak);
+			this->BackColor = System::Drawing::SystemColors::Window;
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"$this.BackgroundImage")));
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->ClientSize = System::Drawing::Size(231, 189);
+			this->Controls->Add(this->groupBox1);
 			this->Controls->Add(this->rezultat2);
 			this->Controls->Add(this->poruka2);
 			this->Controls->Add(this->rezultat1);
 			this->Controls->Add(this->poruka1);
 			this->Controls->Add(this->izracunaj);
-			this->Controls->Add(this->label1);
-			this->Controls->Add(this->label2);
 			this->MaximizeBox = false;
 			this->Name = L"Duha";
-			this->Text = L"Duha";
+			this->Text = L"Duha-namaz";
+			this->groupBox1->ResumeLayout(false);
+			this->groupBox1->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
