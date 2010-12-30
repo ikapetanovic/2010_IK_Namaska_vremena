@@ -214,9 +214,9 @@ private: System::Void izracunaj_Click(System::Object^  sender, System::EventArgs
                   int sati_rezultat = (sekundi_rezultat / 3600) % 24;
                   int minuta_rezultat = (sekundi_rezultat % 3600) / 60;
 
-                  // Treba dodati nulu gdje je potrebno, jer je on zanemari pri ispisu
+                  // Treba dodati nulu gdje je potrebno pri ispisu
 				  rezultat->Text = sati_rezultat + ":" + minuta_rezultat;
-				  aksam->Focus ();
+				  rezultat->Focus ();
 			  }
 			  catch (Exception ^)
 			  {
